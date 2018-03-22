@@ -1,9 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('echo') {
+    stage('git') {
       steps {
-        sh 'python test.py'
+        git(url: 'git@github.com:kriszhi/scripts.git', branch: 'master', changelog: true, poll: true)
+      }
+    }
+    stage('Maven') {
+      steps {
+        sh 'maven clean package'
+      }
+    }
+    stage('artifacts') {
+      steps {
+        archiveArtifacts '*.jar'
       }
     }
   }
