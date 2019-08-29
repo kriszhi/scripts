@@ -34,7 +34,7 @@ def SMS():
     from twilio.rest import Client
 
     # the following line needs your Twilio Account SID and Auth Token
-    client = Client("ACf478221c2c856a75bcc62b48934a285b", "3ba036909d462e4c8d9e308a5605ad08")
+    client = Client("xxxx", "xxxx")
     
     # change the from_ number to your Twilio number and the to number
     # to the phone number you signed up for Twilio with, or upgrade your
